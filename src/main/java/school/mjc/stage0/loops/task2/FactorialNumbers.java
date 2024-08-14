@@ -4,7 +4,7 @@ public class FactorialNumbers {
     public void printFactorialRow(int printToInclusive) {
         int number = 0;
 
-        while (printToInclusive >= 1) {
+        while (number >= printToInclusive) {
             System.out.println(printToInclusive);
             printToInclusive -=1;
         }
