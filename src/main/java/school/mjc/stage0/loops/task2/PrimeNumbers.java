@@ -2,29 +2,28 @@ package school.mjc.stage0.loops.task2;
 
 public class PrimeNumbers {
     public void printPrimeNumbers(int printToInclusive) {
-        int primeNumber = 0;
+        int currentNumber = 2; // Start from 2 since 0 and 1 are not prime numbers
 
-        while (primeNumber <= printToInclusive) {
-        for (int i=0; i<20; i++)
-        {
-            boolean result = true;
-            if(i<2)
-            {
-                result = false;
+        while (currentNumber <= printToInclusive) {
+            if (isPrime(currentNumber)) {
+                System.out.println(currentNumber);
             }
-            else for(int j=2; j<=i/2; j++)
-            {
-                if(i%j==0)
-                {
-                    result = false;
-                    break;
-                }
-            }
-
-            System.out.println("Liczba " + i + " " + (result == true ? "jest" : "nie jest") + " liczbą pierwszą");
+            currentNumber++;
         }
     }
 
+    private boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
         }
+        int divisor = 2;
+        while (divisor <= Math.sqrt(number)) { // Check divisors up to the square root of the number
+            if (number % divisor == 0) {
+                return false; // If divisible by any number other than 1 and itself, it's not prime
+            }
+            divisor++;
+        }
+        return true;
     }
+}
 

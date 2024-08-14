@@ -8,10 +8,4 @@ public class WordsBuilder {
         }
         System.out.println(phrase.toString());
     }
-
-    public static void main(String[] args) {
-        WordsBuilder builder = new WordsBuilder();
-        builder.buildPhrase('H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!');
-    }
 }
-//test for commit
